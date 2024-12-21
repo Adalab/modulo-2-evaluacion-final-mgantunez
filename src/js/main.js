@@ -20,7 +20,7 @@ const getVisibleImageUrl = (imageUrl) => {
 
     return imageUrl;
 
-}
+};
 
 
 const renderOneCard = (cardObj) => {
@@ -31,7 +31,7 @@ const renderOneCard = (cardObj) => {
 
     const html =
 
-        `<li class="character__card">
+        `<li class="js_characterCard character__card favorite">
 
         <div> 
             <img class="character__img" src="${imageUrl}"
@@ -43,7 +43,7 @@ const renderOneCard = (cardObj) => {
 
     return html;
 
-}
+};
 
 
 
@@ -59,7 +59,21 @@ const renderAllCards = () => {
 
     characterUl.innerHTML = html;
 
-}
+    const allCardsLi = document.querySelectorAll('.js_characterCard');
+
+    for (const li of allCardsLi) {
+
+        li.addEventListener('click', handleFavourite);
+
+    }
+
+};
+
+const handleFavourite = (ev) => {
+
+
+
+};
 
 // SECCIÓN DE EVENTOS
 
