@@ -2,22 +2,49 @@
 
 const characterUl = document.querySelector('.js_characterUl');
 
+let allCharactersCards = [];
 
-const renderOneCard = () => {
+const renderOneCard = (cardObj) => {
 
-    characterUl.innerHTML =
+    const html =
 
         `<li class="character__card">
 
         <div class="character__img"> 
-            <img src="${imageUrl}"
-            alt="${name}">
+            <img src="${cardObj.imageUrl}"
+            alt="${cardObj.name}">
         </div>
 
-        <p class="character__name">Imagen de ${name}</p>
+        <p class="character__name">Imagen de ${cardObj.name}</p>
 
     </li>`;
 
+    return html;
+
 }
 
-renderOneCard();
+
+const renderAllCards = () => {
+
+    let html = '';
+
+    for (const oneCard of allCharactersCards) {
+
+        html += renderOneCard(oneCard);
+
+    }
+
+    characterUl.innerHTML = html;
+
+}
+
+fetch('https://api.disneyapi.dev/character?pageSize=50')
+    .then(response => response.json())
+    .then(data => {
+
+        allCharactersCards = data.data;
+
+        renderAllCards();
+
+    });
+
