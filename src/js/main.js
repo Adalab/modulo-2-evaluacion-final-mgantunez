@@ -33,7 +33,7 @@ const renderOneCard = (cardObj) => {
             alt="Imagen de ${cardObj.name}">
         </div>
         <p class="character__name">${cardObj.name}</p>
-        <i class="fa-regular fa-heart"></i>
+        <i class="fa-regular fa-heart character__heart character__heart:hover"></i>
     </li>`;
 
     return html;
