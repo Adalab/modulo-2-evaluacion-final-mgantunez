@@ -1,10 +1,15 @@
 'use strict';
 
+// SECCIÓN DE LOS QUERY SELECTOR
+
 const characterUl = document.querySelector('.js_characterUl');
 
 
+// SECCIÓN DE LOS DATOS DE LA APLICACIÓN
+
 let allCharactersCards = [];
 
+// SECCIÓN DE FUNCIONES
 
 const getVisibleImageUrl = (imageUrl) => {
 
@@ -55,6 +60,13 @@ const renderAllCards = () => {
     characterUl.innerHTML = html;
 
 }
+
+// SECCIÓN DE EVENTOS
+
+
+
+// CÓDIGO QUE SE EJECUTA AL CARGAR LA PÁGINA 
+
 
 fetch('https://api.disneyapi.dev/character?pageSize=50')
     .then(response => response.json())
