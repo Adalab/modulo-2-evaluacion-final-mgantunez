@@ -1,7 +1,6 @@
 .header__image {
 
     height: 50vh;
-
     background-image: url("../images/castillo-de-disney.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -31,4 +30,51 @@
     border-radius: 2px;
     height: 30px;
     width: 40px;
+}
+
+
+.character__title {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.character__list {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    /* Espacio entre cromos */
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+}
+
+
+.character__card {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+
+    width: 200px;
+    height: 180px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 1rem;
+
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+
+}
+
+.character__img {
+    width: 100%;
+}
+
+.character__name {
+    font-size: 1.5rem;
+    margin: 0;
+    padding-top: 0.5rem;
 }
