@@ -55,6 +55,7 @@ const renderOneCard = (cardObj) => {
 
     return html;
 
+
 };
 
 const renderAllCards = () => {
