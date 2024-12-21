@@ -12,10 +12,10 @@ const renderOneCard = (cardObj) => {
 
         <div class="character__img"> 
             <img src="${cardObj.imageUrl}"
-            alt="${cardObj.name}">
+            alt="Imagen de ${cardObj.name}">
         </div>
 
-        <p class="character__name">Imagen de ${cardObj.name}</p>
+        <p class="character__name">${cardObj.name}</p>
 
     </li>`;
 
