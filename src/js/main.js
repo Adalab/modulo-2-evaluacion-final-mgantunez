@@ -3,11 +3,14 @@
 // SECCIÓN DE LOS QUERY SELECTOR
 
 const characterUl = document.querySelector('.js_characterUl');
+const favouriteCharacterUl = document.querySelector('.js_favouriteCharacterUl')
 
 
 // SECCIÓN DE LOS DATOS DE LA APLICACIÓN
 
 let allCharactersCards = [];
+
+let favouritesCards = [];
 
 // SECCIÓN DE FUNCIONES
 
@@ -50,7 +53,7 @@ const renderOneCard = (cardObj) => {
 
     const html =
 
-        `<li class="js_characterCard character__card">
+        `<li class="js_characterCard character__card" id="${cardObj._id}">
 
         <div> 
             <img class="character__img" src="${imageUrl}"
@@ -91,8 +94,29 @@ const renderAllCards = () => {
 
 const handleFavourite = (ev) => {
 
+    debugger;
+
     ev.currentTarget.classList.toggle('favourite');
 
+    const obtainID = parseInt(ev.currentTarget.id);
+
+
+    // Búsqueda en el array de todos los personajes
+    const clickedCharacterObj = allCharactersCards.find((eachCharacter) => eachCharacter._id === obtainID);
+
+    // Búsqueda en el array de los personajes favoritos
+    const favouriteCharacterObj = favouritesCards.find((eachCharacter) => eachCharacter._id === obtainID);
+
+    if (favouriteCharacterObj === undefined) {
+
+        // Se añade el <li> del personaje favorito al HTML
+
+        const liFavourite = renderOneCard(clickedCharacterObj);
+
+        favouriteCharacterUl.innerHTML += liFavourite;
+
+        favouritesCards.push(clickedCharacterObj);
+    }
 };
 
 
