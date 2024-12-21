@@ -68,8 +68,6 @@ const renderOneCard = (cardObj) => {
 
 };
 
-
-
 const renderAllCards = () => {
 
     let html = '';
@@ -92,6 +90,21 @@ const renderAllCards = () => {
 
 };
 
+const renderFavourites = () => {
+
+    let html = '';
+
+    for (const oneCard of favouritesCards) {
+
+        html += renderOneCard(oneCard);
+
+    }
+
+    favouriteCharacterUl.innerHTML = html;
+
+};
+
+
 const handleFavourite = (ev) => {
 
     debugger;
@@ -105,17 +118,29 @@ const handleFavourite = (ev) => {
     const clickedCharacterObj = allCharactersCards.find((eachCharacter) => eachCharacter._id === obtainID);
 
     // Búsqueda en el array de los personajes favoritos
-    const favouriteCharacterObj = favouritesCards.find((eachCharacter) => eachCharacter._id === obtainID);
+    const favouritesIndex = favouritesCards.findIndex((eachCharacter) => eachCharacter._id === obtainID);
 
-    if (favouriteCharacterObj === undefined) {
+    if (favouritesIndex === -1) {
 
         // Se añade el <li> del personaje favorito al HTML
 
-        const liFavourite = renderOneCard(clickedCharacterObj);
-
-        favouriteCharacterUl.innerHTML += liFavourite;
-
         favouritesCards.push(clickedCharacterObj);
+
+        renderFavourites();
+
+    }
+
+    else {
+
+        // Quitar del array de favoritos
+
+        favouritesCards.splice(favouritesIndex, 1);
+
+        // Quitar del HTML
+
+        renderFavourites();
+
+
     }
 };
 
