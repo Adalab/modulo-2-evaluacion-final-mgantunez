@@ -26,41 +26,30 @@ const getVisibleImageUrl = (imageUrl) => {
 };
 
 
-/*
-const getHeartClicked = (heartClicked) => {
-
-    if (heartClicked) {
-
-        return '<i class="fa-solid fa-heart js_characterHeart heartClicked"></i>';
-
-    }
-
-    else {
-        return '<i class="fa-regular fa-heart js_characterHeart character__heart character__heart:hover"></i>';
-
-    }
-
-};
-
-*/
-
-
 const renderOneCard = (cardObj) => {
 
-
     const imageUrl = getVisibleImageUrl(cardObj.imageUrl);
-    debugger;
+
+    const isFavourite = favouritesCards.findIndex((favCard) => favCard._id === cardObj._id) !== -1;
+
+    const favClass = isFavourite ? 'favourite' : '';
+
+    // Clases para el corazón
+
+    const heartType = isFavourite ? 'fa-solid' : 'fa-regular';
+
+    const heartClass = isFavourite ? 'heartClicked' : 'character__heart';
 
     const html =
 
-        `<li class="js_characterCard character__card" id="${cardObj._id}">
+        `<li class="js_characterCard character__card ${favClass}" id="${cardObj._id}">
 
         <div> 
             <img class="character__img" src="${imageUrl}"
             alt="Imagen de ${cardObj.name}">
         </div>
         <p class="character__name">${cardObj.name}</p>
-        <i class="fa-regular fa-heart js_characterHeart character__heart character__heart:hover"></i>
+        <i class="${heartType} fa-heart js_characterHeart ${heartClass}"></i>
 
     </li>`;
 
@@ -127,6 +116,7 @@ const handleFavourite = (ev) => {
         favouritesCards.push(clickedCharacterObj);
 
         renderFavourites();
+        renderAllCards();
 
     }
 
@@ -139,7 +129,7 @@ const handleFavourite = (ev) => {
         // Quitar del HTML
 
         renderFavourites();
-
+        renderAllCards();
 
     }
 };
