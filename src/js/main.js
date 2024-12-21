@@ -23,22 +23,42 @@ const getVisibleImageUrl = (imageUrl) => {
 };
 
 
+/*
+const getHeartClicked = (heartClicked) => {
+
+    if (heartClicked) {
+
+        return '<i class="fa-solid fa-heart js_characterHeart heartClicked"></i>';
+
+    }
+
+    else {
+        return '<i class="fa-regular fa-heart js_characterHeart character__heart character__heart:hover"></i>';
+
+    }
+
+};
+
+*/
+
+
 const renderOneCard = (cardObj) => {
 
-    debugger;
 
     const imageUrl = getVisibleImageUrl(cardObj.imageUrl);
+    debugger;
 
     const html =
 
-        `<li class="js_characterCard character__card favorite">
+        `<li class="js_characterCard character__card">
 
         <div> 
             <img class="character__img" src="${imageUrl}"
             alt="Imagen de ${cardObj.name}">
         </div>
         <p class="character__name">${cardObj.name}</p>
-        <i class="fa-regular fa-heart character__heart character__heart:hover"></i>
+        <i class="fa-regular fa-heart js_characterHeart character__heart character__heart:hover"></i>
+
     </li>`;
 
     return html;
@@ -71,9 +91,10 @@ const renderAllCards = () => {
 
 const handleFavourite = (ev) => {
 
-
+    ev.currentTarget.classList.toggle('favourite');
 
 };
+
 
 // SECCIÓN DE EVENTOS
 
