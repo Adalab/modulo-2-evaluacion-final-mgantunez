@@ -97,10 +97,6 @@ const renderFavourites = () => {
 
 const handleFavourite = (ev) => {
 
-    debugger;
-
-    ev.currentTarget.classList.toggle('favourite');
-
     const obtainID = parseInt(ev.currentTarget.id);
 
 

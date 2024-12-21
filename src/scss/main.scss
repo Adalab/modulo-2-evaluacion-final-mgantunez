@@ -28,12 +28,18 @@
 }
 
 .section-search-btn {
-    background-color: #00e4c6;
+    background-color: #AA336A;
     color: white;
     font-size: 16px;
     border: none;
     border-radius: 2px;
 }
+
+.section-search-btn :hover {
+    color: #f9f9f9;
+}
+
+
 
 .main {
     background: linear-gradient(to right, pink, white, );
