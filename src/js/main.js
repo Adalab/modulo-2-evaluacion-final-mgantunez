@@ -65,15 +65,7 @@ const renderAllCards = () => {
 
     let html = '';
 
-    const searchCard = inputSearch.value.toLocaleLowerCase();
-
-    let filteredCards = allCharactersCards;
-
-    if (searchCard !== '') {
-        filteredCards = allCharactersCards.filter((oneCard) => oneCard.name.toLocaleLowerCase().includes(searchCard));
-    }
-
-    for (const oneCard of filteredCards) {
+    for (const oneCard of allCharactersCards) {
 
         html += renderOneCard(oneCard);
 
@@ -147,19 +139,56 @@ const handleFavourite = (ev) => {
 
 const handleClickButton = (ev) => {
 
-    renderFavourites();
+    ev.preventDefault();
+
+
     renderAllCards();
 
-    ev.preventDefault();
-}
+    const searchCard = inputSearch.value.toLocaleLowerCase();
+
+    if (searchCard === '') {
+
+        fetch('https://api.disneyapi.dev/character?pageSize=50')
+            .then(response => response.json())
+            .then(data => {
+                allCharactersCards = data.data;
+                renderFavourites();
+                renderAllCards();
+            })
+
+        return;
+    }
+
+    // URL con  parámetro de búsqueda
+    const apiUrl = `https://api.disneyapi.dev/character?pageSize=50&name=${encodeURIComponent(searchCard)}`;
+
+    // Llamada a la API
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+
+            // Comprueba si hay resultados
+            if (data.info.count === 0) {
+
+                allCharactersCards = [];
+                renderFavourites();
+                renderAllCards();
+                return;
+            }
+
+            allCharactersCards = data.data;
+            renderAllCards();
+        })
+
+};
 
 
 // SECCIÓN DE EVENTOS
 
 btnSearch.addEventListener('click', handleClickButton);
 
-// CÓDIGO QUE SE EJECUTA AL CARGAR LA PÁGINA 
 
+// CÓDIGO QUE SE EJECUTA AL CARGAR LA PÁGINA 
 
 fetch('https://api.disneyapi.dev/character?pageSize=50')
     .then(response => response.json())
