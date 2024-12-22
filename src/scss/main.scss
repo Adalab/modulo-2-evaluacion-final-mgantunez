@@ -6,7 +6,7 @@
     background-position: center;
 }
 
-.section-search-form-btn {
+.search__form {
     display: grid;
     grid-template-columns: 4fr 1fr;
     padding-top: 25px;
@@ -22,12 +22,12 @@
 
 }
 
-.section-search-input {
+.search__input {
     height: 10px;
     padding: 10px;
 }
 
-.section-search-btn {
+.search__btn {
     background-color: #AA336A;
     color: white;
     font-size: 16px;
@@ -35,11 +35,10 @@
     border-radius: 2px;
 }
 
-.section-search-btn :hover {
-    color: #f9f9f9;
+.search__btn:hover {
+    background-color: pink;
+    color: #AA336A;
 }
-
-
 
 .main {
     background: linear-gradient(to right, pink, white, );

@@ -4,6 +4,8 @@
 
 const characterUl = document.querySelector('.js_characterUl');
 const favouriteCharacterUl = document.querySelector('.js_favouriteCharacterUl')
+const btnSearch = document.querySelector('.js_btnSearch');
+const input = document.querySelector('.js_inputSearch');
 
 
 // SECCIÓN DE LOS DATOS DE LA APLICACIÓN
@@ -77,6 +79,11 @@ const renderAllCards = () => {
         li.addEventListener('click', handleFavourite);
 
     }
+
+
+
+
+
 
 };
 
