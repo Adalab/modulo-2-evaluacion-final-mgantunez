@@ -172,12 +172,17 @@ const handleClickButton = (ev) => {
 
         .then(data => {
 
+            debugger;
             // Comprueba si hay resultados
             if (data.info.count === 0) {
 
                 allCharactersCards = [];
                 renderFavourites();
                 renderAllCards();
+
+                characterNotFound.textContent = 'Lo sentimos, ese personaje no se encuentra en nuestra base de datos. Prueba con otro personaje.';
+                characterNotFound.style.display = 'block';
+                characterUl.style.display = 'none';
 
                 return;
 
