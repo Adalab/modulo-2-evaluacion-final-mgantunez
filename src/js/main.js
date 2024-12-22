@@ -5,7 +5,7 @@
 const characterUl = document.querySelector('.js_characterUl');
 const favouriteCharacterUl = document.querySelector('.js_favouriteCharacterUl')
 const btnSearch = document.querySelector('.js_btnSearch');
-const input = document.querySelector('.js_inputSearch');
+const inputSearch = document.querySelector('.js_inputSearch');
 
 
 // SECCIÓN DE LOS DATOS DE LA APLICACIÓN
@@ -63,6 +63,10 @@ const renderOneCard = (cardObj) => {
 const renderAllCards = () => {
 
     let html = '';
+
+    const searchCard = inputSearch.value.toLocaleLowerCase();
+
+
 
     for (const oneCard of allCharactersCards) {
 
@@ -144,7 +148,7 @@ const handleFavourite = (ev) => {
 
 // SECCIÓN DE EVENTOS
 
-
+btnSearch.addEventListener('click', handleClickButton);
 
 // CÓDIGO QUE SE EJECUTA AL CARGAR LA PÁGINA 
 
