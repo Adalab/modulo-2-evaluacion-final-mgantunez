@@ -62,14 +62,15 @@ const renderOneCard = (cardObj) => {
 
 const renderAllCards = () => {
 
-    debugger;
-
     let html = '';
 
+    // Aquí compruebo si lo que quiero que se renderice en la página es un array de diferentes personajes o solo un objeto con un personaje. 
+    // Si solo es un objeto, convierto el objeto en array
+
+    allCharactersCards = Array.isArray(allCharactersCards) ? allCharactersCards : [allCharactersCards];
+
     for (const oneCard of allCharactersCards) {
-
         html += renderOneCard(oneCard);
-
     }
 
     characterUl.innerHTML = html;
@@ -97,7 +98,6 @@ const renderFavourites = () => {
     favouriteCharacterUl.innerHTML = html;
 
 };
-
 
 const handleFavourite = (ev) => {
 
@@ -138,19 +138,21 @@ const handleFavourite = (ev) => {
 
 };
 
+
 const handleClickButton = (ev) => {
 
     ev.preventDefault();
-
-    debugger;
 
     const searchCard = inputSearch.value.toLocaleLowerCase();
 
     if (searchCard === '') {
 
         fetch('https://api.disneyapi.dev/character?pageSize=50')
+
             .then(response => response.json())
+
             .then(data => {
+
                 allCharactersCards = data.data;
                 renderFavourites();
                 renderAllCards();
@@ -165,6 +167,7 @@ const handleClickButton = (ev) => {
 
     // Llamada a la API
     fetch(apiUrl)
+
         .then(response => response.json())
 
         .then(data => {
@@ -180,22 +183,28 @@ const handleClickButton = (ev) => {
 
             }
 
-            // Si se encuentran resultados: 
+            // Si se encuentran resultados
 
-            allCharactersCards = data.data;
-            renderAllCards();
+            if (data.info.count >= 1) {
+
+                debugger;
+                allCharactersCards = data.data;
+                renderAllCards();
+            }
         })
 
         .catch(error => {
-            // Si hay un error con la llamada a la API
-            console.error('Error al obtener los datos:', error);
+            // Si hay un error con la llamada a la API o no existe el personaje
+            console.error('Error', error);
+
             characterNotFound.textContent = 'Lo sentimos, hubo un problema con la búsqueda';
             characterNotFound.style.display = 'block';
             characterUl.style.display = 'none';
+
         });
 
-};
 
+};
 
 // SECCIÓN DE EVENTOS
 
