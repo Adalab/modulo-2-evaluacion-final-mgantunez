@@ -145,6 +145,14 @@ const handleFavourite = (ev) => {
 
 };
 
+const handleClickButton = (ev) => {
+
+    renderFavourites();
+    renderAllCards();
+
+    ev.preventDefault();
+}
+
 
 // SECCIÓN DE EVENTOS
 
