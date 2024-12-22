@@ -6,6 +6,7 @@ const characterUl = document.querySelector('.js_characterUl');
 const favouriteCharacterUl = document.querySelector('.js_favouriteCharacterUl')
 const btnSearch = document.querySelector('.js_btnSearch');
 const inputSearch = document.querySelector('.js_inputSearch');
+const characterNotFound = document.querySelector('.js_characterNotFound');
 
 
 // SECCIÓN DE LOS DATOS DE LA APLICACIÓN
@@ -141,8 +142,7 @@ const handleClickButton = (ev) => {
 
     ev.preventDefault();
 
-
-    renderAllCards();
+    debugger;
 
     const searchCard = inputSearch.value.toLocaleLowerCase();
 
@@ -157,6 +157,7 @@ const handleClickButton = (ev) => {
             })
 
         return;
+
     }
 
     // URL con  parámetro de búsqueda
@@ -165,6 +166,7 @@ const handleClickButton = (ev) => {
     // Llamada a la API
     fetch(apiUrl)
         .then(response => response.json())
+
         .then(data => {
 
             // Comprueba si hay resultados
@@ -173,12 +175,24 @@ const handleClickButton = (ev) => {
                 allCharactersCards = [];
                 renderFavourites();
                 renderAllCards();
+
                 return;
+
             }
+
+            // Si se encuentran resultados: 
 
             allCharactersCards = data.data;
             renderAllCards();
         })
+
+        .catch(error => {
+            // Si hay un error con la llamada a la API
+            console.error('Error al obtener los datos:', error);
+            characterNotFound.textContent = 'Lo sentimos, hubo un problema con la búsqueda';
+            characterNotFound.style.display = 'block';
+            characterUl.style.display = 'none';
+        });
 
 };
 
