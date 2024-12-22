@@ -57,18 +57,23 @@ const renderOneCard = (cardObj) => {
 
     return html;
 
-
 };
 
 const renderAllCards = () => {
+
+    debugger;
 
     let html = '';
 
     const searchCard = inputSearch.value.toLocaleLowerCase();
 
+    let filteredCards = allCharactersCards;
 
+    if (searchCard !== '') {
+        filteredCards = allCharactersCards.filter((oneCard) => oneCard.name.toLocaleLowerCase().includes(searchCard));
+    }
 
-    for (const oneCard of allCharactersCards) {
+    for (const oneCard of filteredCards) {
 
         html += renderOneCard(oneCard);
 
@@ -83,11 +88,6 @@ const renderAllCards = () => {
         li.addEventListener('click', handleFavourite);
 
     }
-
-
-
-
-
 
 };
 
