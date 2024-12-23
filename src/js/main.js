@@ -29,7 +29,7 @@ const getVisibleImageUrl = (imageUrl) => {
 };
 
 
-const renderOneCard = (cardObj) => {
+const renderOneCard = (cardObj, isFavouriteSection = false) => {
 
     const imageUrl = getVisibleImageUrl(cardObj.imageUrl);
 
@@ -43,6 +43,10 @@ const renderOneCard = (cardObj) => {
 
     const heartClass = isFavourite ? 'heartClicked' : 'character__heart';
 
+    // Icono de basura solo si está en la sección de favoritos
+
+    const trashIcon = isFavouriteSection ? '<i class="fa-solid fa-trash js_trash"></i>' : '';
+
     const html =
 
         `<li class="js_characterCard character__card ${favClass}" id="${cardObj._id}">
@@ -53,6 +57,7 @@ const renderOneCard = (cardObj) => {
         </div>
         <p class="character__name">${cardObj.name}</p>
         <i class="${heartType} fa-heart js_characterHeart ${heartClass}"></i>
+        ${trashIcon}
 
     </li>`;
 
@@ -91,7 +96,7 @@ const renderFavourites = () => {
 
     for (const oneCard of favouritesCards) {
 
-        html += renderOneCard(oneCard);
+        html += renderOneCard(oneCard, true);
 
     }
 

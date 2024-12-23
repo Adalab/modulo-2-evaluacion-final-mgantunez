@@ -84,7 +84,6 @@
     overflow: hidden;
 }
 
-
 // Clase favourite para el <li>
 
 .favourite {
@@ -145,7 +144,7 @@
 }
 
 
-// Pasar el fondo a blanco y ocultar el corazón en la lista de favoritos */
+// Pasar el fondo a blanco y ocultar el corazón en la lista de favoritos 
 
 .js_favouriteCharacterUl .favourite {
     background-color: white;
@@ -154,4 +153,15 @@
 
 .js_favouriteCharacterUl .favourite .js_characterHeart {
     display: none;
+}
+
+// Icono de basura
+
+.js_trash {
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.js_trash:hover {
+    color: red;
 }
