@@ -55,19 +55,32 @@
     font-family: 'Roboto', sans-serif;
 }
 
-.characters__section {
+.bothcharacters__sections {
     display: grid;
     grid-template-columns: 70% 30%;
     margin-bottom: 50px;
 }
 
-.characters__title {
+.Allcharacters_section {
+    border: 2px solid #AA336A;
+    border-radius: 10px;
+    margin-left: 50px;
+    padding-bottom: 50px;
+}
+
+.Allcharacters__imageMickey {
+    position: absolute;
+    height: 13%;
+    transform: translate(850px, -25px);
+}
+
+.Allcharacters__title {
     text-align: center;
     font-size: 2rem;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
 }
 
-.character__list {
+.Allcharacters__list {
     list-style: none;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -76,7 +89,7 @@
     max-width: 1200px;
 }
 
-.characters__card {
+.Allcharacters__card {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -96,7 +109,7 @@
 
 .favourite {
     border: 2px solid #AA336A;
-    background-color: pink;
+    background-color: rgb(230, 138, 151);
 }
 
 .character__img {

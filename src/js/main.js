@@ -50,7 +50,7 @@ const renderOneCard = (cardObj, isFavouriteSection = false) => {
     const imageHTML = isFavouriteSection ? '' : `<img class="character__img" src="${imageUrl}" alt="Imagen de ${cardObj.name}">`;
 
     // Cambiar el diseño de la card dependiendo de si estamos en la sección principal o de favoritos
-    const cardClass = isFavouriteSection ? 'charactersFavourite__card' : 'characters__card';
+    const cardClass = isFavouriteSection ? 'charactersFavourite__card' : 'Allcharacters__card';
 
     // Icono de basura solo si está en la sección de favoritos
 
