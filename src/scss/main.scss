@@ -136,9 +136,7 @@
 
 .charactersFavourite_list {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 10px;
 }
 
@@ -149,7 +147,7 @@
     justify-content: space-between;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    width: 100%;
+    width: 90%;
 }
 
 .charactersFavourite__title {
