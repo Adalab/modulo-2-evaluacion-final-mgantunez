@@ -218,7 +218,8 @@ const handleClickButton = (ev) => {
                 renderFavourites();
                 renderAllCards();
 
-                characterNotFound.innerHTML = 'Lo sentimos, ese personaje no se encuentra en nuestra base de datos. Prueba con otro personaje.';
+                characterNotFound.innerHTML = `<p>Lo sentimos, ese personaje no se encuentra en nuestra base de datos. Prueba con otro personaje.</p>
+                <img src="../images/Alicia llorando character not found.gif/" alt="Personaje no encontrado. Gif de Alicia en el país de las maravillas llorando">`;
                 characterNotFound.style.display = 'block';
                 characterNotFound.classList.add('search__characterNotFound');
                 characterUl.classList.add('hidden');
