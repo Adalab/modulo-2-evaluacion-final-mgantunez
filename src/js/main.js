@@ -182,6 +182,9 @@ const handleClickButton = (ev) => {
 
     ev.preventDefault();
 
+    characterNotFound.style.display = 'none'; // PREGUNTAR A IVÁN
+    characterNotFound.innerHTML = '';
+
     const searchCard = inputSearch.value.toLocaleLowerCase();
 
     if (searchCard === '') {
@@ -218,8 +221,11 @@ const handleClickButton = (ev) => {
                 renderFavourites();
                 renderAllCards();
 
-                characterNotFound.innerHTML = `<p>Lo sentimos, ese personaje no se encuentra en nuestra base de datos. Prueba con otro personaje.</p>
-                <img src="../images/Alicia llorando character not found.gif/" alt="Personaje no encontrado. Gif de Alicia en el país de las maravillas llorando">`;
+                characterNotFound.innerHTML =
+                    `<p>Lo sentimos, ese personaje no se encuentra en nuestra base de datos. Prueba con otro personaje.</p>
+                <img src="../images/Alicia llorando character not found.gif" alt="Personaje no encontrado. 
+                Gif de Alicia en el país de las maravillas llorando">`;
+
                 characterNotFound.style.display = 'block';
                 characterNotFound.classList.add('search__characterNotFound');
                 characterUl.classList.add('hidden');
@@ -230,7 +236,6 @@ const handleClickButton = (ev) => {
 
             // Si se encuentran resultados
 
-            characterNotFound.style.display = 'none';
             characterUl.classList.remove('hidden');
 
             allCharactersCards = data.data;
