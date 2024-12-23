@@ -75,7 +75,7 @@ const renderAllCards = () => {
     allCharactersCards = Array.isArray(allCharactersCards) ? allCharactersCards : [allCharactersCards];
 
     for (const oneCard of allCharactersCards) {
-        html += renderOneCard(oneCard);
+        html += renderOneCard(oneCard, false);
     }
 
     characterUl.innerHTML = html;
