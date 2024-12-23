@@ -108,6 +108,19 @@ const renderFavourites = () => {
 
 };
 
+// Creo una variables para que se muestre el botón de borrar todos los favoritos cuando haya favoritos
+
+const updateDeleteButtonVisibility = () => {
+
+    if (favouritesCards.length > 0) {
+        deleteAllFavouritesBtn.style.display = 'block';
+
+    } else {
+        deleteAllFavouritesBtn.style.display = 'none';
+    }
+};
+
+
 const handleFavourite = (ev) => {
 
     const obtainID = parseInt(ev.currentTarget.id);
@@ -142,6 +155,8 @@ const handleFavourite = (ev) => {
         renderAllCards();
 
     }
+
+    updateDeleteButtonVisibility();
 
     localStorage.setItem('charactersFavs', JSON.stringify(favouritesCards));
 
@@ -232,6 +247,9 @@ const handleDeleteAllFavourites = () => {
 
     // Eliminar los favoritos de localStorage
     localStorage.removeItem('charactersFavs');
+
+    // Actualizar visibilidad del botón de borrar
+    updateDeleteButtonVisibility();
 };
 
 // SECCIÓN DE EVENTOS
@@ -255,4 +273,5 @@ fetch('https://api.disneyapi.dev/character?pageSize=50')
 if (localStorage.getItem('charactersFavs') !== null) {
     favouritesCards = JSON.parse(localStorage.getItem('charactersFavs'));
     renderFavourites();
+    updateDeleteButtonVisibility();
 }
