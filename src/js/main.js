@@ -7,6 +7,7 @@ const favouriteCharacterUl = document.querySelector('.js_favouriteCharacterUl')
 const btnSearch = document.querySelector('.js_btnSearch');
 const inputSearch = document.querySelector('.js_inputSearch');
 const characterNotFound = document.querySelector('.js_characterNotFound');
+const deleteAllFavouritesBtn = document.querySelector('.js_deleteAllFavouritesBtn');
 
 
 // SECCIÓN DE LOS DATOS DE LA APLICACIÓN
@@ -217,12 +218,26 @@ const handleClickButton = (ev) => {
 
         });
 
+};
 
+const handleDeleteAllFavourites = () => {
+
+    console.log('Borrar todos los favoritos');
+
+    // Primero se vacía el array de favoritos
+    favouritesCards = [];
+
+    renderFavourites();
+    renderAllCards();
+
+    // Eliminar los favoritos de localStorage
+    localStorage.removeItem('charactersFavs');
 };
 
 // SECCIÓN DE EVENTOS
 
 btnSearch.addEventListener('click', handleClickButton);
+deleteAllFavouritesBtn.addEventListener('click', handleDeleteAllFavourites);
 
 
 // CÓDIGO QUE SE EJECUTA AL CARGAR LA PÁGINA 
