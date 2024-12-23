@@ -62,6 +62,7 @@
 .characters__title {
     text-align: center;
     font-size: 2rem;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
 }
 
 .character__list {
@@ -135,6 +136,7 @@
 .charactersFavourite__title {
     font-size: 2rem;
     text-align: center;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
 }
 
 // Pasar el fondo a blanco y ocultar el corazón en la lista de favoritos 
@@ -149,7 +151,7 @@
     display: none;
 }
 
-// Icono de basura
+// Icono de basura para la sección de favoritos
 
 .js_trash {
     cursor: pointer;
@@ -158,4 +160,20 @@
 
 .js_trash:hover {
     color: red;
+}
+
+.footer {
+    background-color: #AA336A;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
