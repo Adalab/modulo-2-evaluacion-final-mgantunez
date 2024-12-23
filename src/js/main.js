@@ -182,7 +182,7 @@ const handleClickButton = (ev) => {
 
     ev.preventDefault();
 
-    characterNotFound.style.display = 'none'; // PREGUNTAR A IVÁN
+    characterNotFound.style.display = 'none';
     characterNotFound.innerHTML = '';
 
     const searchCard = inputSearch.value.toLocaleLowerCase();
