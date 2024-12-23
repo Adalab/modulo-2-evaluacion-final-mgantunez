@@ -29,17 +29,18 @@
 }
 
 .search__input {
-    height: 50%;
+    height: 2rem;
     font-size: 20px;
 }
 
 .search__btn {
     background-color: #AA336A;
-    height: 50%;
+    height: 2rem;
     color: white;
     font-size: 20px;
-    border: none;
+    border: 2px solid #AA336A;
     border-radius: 2px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .search__btn:hover {
