@@ -8,7 +8,8 @@ const btnSearch = document.querySelector('.js_btnSearch');
 const inputSearch = document.querySelector('.js_inputSearch');
 const characterNotFound = document.querySelector('.js_characterNotFound');
 const deleteAllFavouritesBtn = document.querySelector('.js_deleteAllFavouritesBtn');
-
+const descriptionTextFavourites = document.querySelector('.js_descriptionTextFavourites');
+const imageStitchFavourites = document.querySelector('.js_imageStitchFavourites');
 
 // SECCIÓN DE LOS DATOS DE LA APLICACIÓN
 
@@ -106,9 +107,21 @@ const renderFavourites = () => {
 
     favouriteCharacterUl.innerHTML = html;
 
+    if (favouritesCards.length === 0) {
+        // Mostrar texto e imagen si no hay favoritos
+        descriptionTextFavourites.style.display = 'block';
+        imageStitchFavourites.style.display = 'block';
+
+
+    } else {
+        // Ocultar texto e imagen si hay favoritos
+        descriptionTextFavourites.style.display = 'none';
+        imageStitchFavourites.style.display = 'none';
+    }
+
 };
 
-// Creo una variables para que se muestre el botón de borrar todos los favoritos cuando haya favoritos
+// Creo una variable para que se muestre el botón de borrar todos los favoritos cuando haya favoritos
 
 const updateDeleteButtonVisibility = () => {
 
@@ -251,6 +264,7 @@ const handleDeleteAllFavourites = () => {
     // Actualizar visibilidad del botón de borrar
     updateDeleteButtonVisibility();
 };
+
 
 // SECCIÓN DE EVENTOS
 

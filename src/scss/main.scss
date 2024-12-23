@@ -159,7 +159,7 @@
 
 .charactersFavourite__text {
     margin: auto;
-    width: 70%;
+    width: 90%;
     text-align: center;
     margin-bottom: 25px;
 
@@ -176,6 +176,11 @@
     display: flex;
     justify-content: center;
     margin: auto;
+}
+
+.charactersFavourite__delete-btn:hover {
+    background-color: pink;
+    color: #AA336A;
 }
 
 .charactersFavourite__image {
