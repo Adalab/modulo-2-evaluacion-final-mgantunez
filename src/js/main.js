@@ -10,6 +10,8 @@ const characterNotFound = document.querySelector('.js_characterNotFound');
 const deleteAllFavouritesBtn = document.querySelector('.js_deleteAllFavouritesBtn');
 const descriptionTextFavourites = document.querySelector('.js_descriptionTextFavourites');
 const imageStitchFavourites = document.querySelector('.js_imageStitchFavourites');
+const favouritesCounter = document.querySelector('.js_favouritesCounter');
+
 
 // SECCIÓN DE LOS DATOS DE LA APLICACIÓN
 
@@ -111,13 +113,17 @@ const renderFavourites = () => {
         // Mostrar texto e imagen si no hay favoritos
         descriptionTextFavourites.style.display = 'block';
         imageStitchFavourites.style.display = 'block';
-
+        favouritesCounter.style.display = 'none';
 
     } else {
         // Ocultar texto e imagen si hay favoritos
         descriptionTextFavourites.style.display = 'none';
         imageStitchFavourites.style.display = 'none';
+        favouritesCounter.style.display = 'block';
     }
+
+    // Contador de personajes favoritos
+    favouritesCounter.innerHTML = `<i class="fa-solid fa-heart charactersFavourite_counterheart" style="color: red;"></i> Total de favoritos: ${favouritesCards.length}`;
 
 };
 
@@ -138,7 +144,6 @@ const handleFavourite = (ev) => {
 
     const obtainID = parseInt(ev.currentTarget.id);
 
-
     // Búsqueda en el array de todos los personajes
     const clickedCharacterObj = allCharactersCards.find((eachCharacter) => eachCharacter._id === obtainID);
 
@@ -151,9 +156,6 @@ const handleFavourite = (ev) => {
 
         favouritesCards.push(clickedCharacterObj);
 
-        renderFavourites();
-        renderAllCards();
-
     }
 
     else {
@@ -164,10 +166,10 @@ const handleFavourite = (ev) => {
 
         // Quitar del HTML
 
-        renderFavourites();
-        renderAllCards();
-
     }
+
+    renderFavourites();
+    renderAllCards();
 
     updateDeleteButtonVisibility();
 
@@ -216,8 +218,9 @@ const handleClickButton = (ev) => {
                 renderFavourites();
                 renderAllCards();
 
-                characterNotFound.textContent = 'Lo sentimos, ese personaje no se encuentra en nuestra base de datos. Prueba con otro personaje.';
+                characterNotFound.innerHTML = 'Lo sentimos, ese personaje no se encuentra en nuestra base de datos. Prueba con otro personaje.';
                 characterNotFound.style.display = 'block';
+                characterNotFound.classList.add('search__characterNotFound');
                 characterUl.classList.add('hidden');
 
                 return;
