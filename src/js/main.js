@@ -143,6 +143,8 @@ const handleClickButton = (ev) => {
 
     ev.preventDefault();
 
+    let html = '';
+
     const searchCard = inputSearch.value.toLocaleLowerCase();
 
     if (searchCard === '') {
@@ -172,7 +174,6 @@ const handleClickButton = (ev) => {
 
         .then(data => {
 
-            debugger;
             // Comprueba si hay resultados
             if (data.info.count === 0) {
 
@@ -182,7 +183,7 @@ const handleClickButton = (ev) => {
 
                 characterNotFound.textContent = 'Lo sentimos, ese personaje no se encuentra en nuestra base de datos. Prueba con otro personaje.';
                 characterNotFound.style.display = 'block';
-                characterUl.style.display = 'none';
+                characterUl.classList.add('hidden');
 
                 return;
 
@@ -190,12 +191,18 @@ const handleClickButton = (ev) => {
 
             // Si se encuentran resultados
 
-            if (data.info.count >= 1) {
 
-                debugger;
-                allCharactersCards = data.data;
-                renderAllCards();
-            }
+
+            debugger;
+
+            characterNotFound.style.display = 'none';
+            characterUl.classList.remove('hidden');
+
+            allCharactersCards = data.data;
+            renderFavourites();
+            renderAllCards();
+
+
         })
 
         .catch(error => {
