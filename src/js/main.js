@@ -43,18 +43,21 @@ const renderOneCard = (cardObj, isFavouriteSection = false) => {
 
     const heartClass = isFavourite ? 'heartClicked' : 'character__heart';
 
+    // Quitar la imagen en la sección de favoritos
+
+    const imageHTML = isFavouriteSection ? '' : `<img class="character__img" src="${imageUrl}" alt="Imagen de ${cardObj.name}">`;
+
+    // Cambiar el diseño de la card dependiendo de si estamos en la sección principal o de favoritos
+    const cardClass = isFavouriteSection ? 'charactersFavourite__card' : 'characters__card';
+
     // Icono de basura solo si está en la sección de favoritos
 
     const trashIcon = isFavouriteSection ? '<i class="fa-solid fa-trash js_trash"></i>' : '';
 
     const html =
 
-        `<li class="js_characterCard character__card ${favClass}" id="${cardObj._id}">
-
-        <div> 
-            <img class="character__img" src="${imageUrl}"
-            alt="Imagen de ${cardObj.name}">
-        </div>
+        `<li class="js_characterCard ${cardClass} ${favClass}" id="${cardObj._id}">
+        <div> ${imageHTML} </div>
         <p class="character__name">${cardObj.name}</p>
         <i class="${heartType} fa-heart js_characterHeart ${heartClass}"></i>
         ${trashIcon}
@@ -148,8 +151,6 @@ const handleClickButton = (ev) => {
 
     ev.preventDefault();
 
-    let html = '';
-
     const searchCard = inputSearch.value.toLocaleLowerCase();
 
     if (searchCard === '') {
@@ -195,10 +196,6 @@ const handleClickButton = (ev) => {
             }
 
             // Si se encuentran resultados
-
-
-
-            debugger;
 
             characterNotFound.style.display = 'none';
             characterUl.classList.remove('hidden');
