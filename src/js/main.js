@@ -52,7 +52,7 @@ const renderOneCard = (cardObj, isFavouriteSection = false) => {
     const imageHTML = isFavouriteSection ? '' : `<img class="character__img" src="${imageUrl}" alt="Imagen de ${cardObj.name}">`;
 
     // Cambiar el diseño de la card dependiendo de si estamos en la sección principal o de favoritos
-    const cardClass = isFavouriteSection ? 'charactersFavourite__card' : 'allCharactersSection__card';
+    const cardClass = isFavouriteSection ? 'charactersFavouriteSection__card' : 'allCharactersSection__card';
 
     // Icono de basura solo si está en la sección de favoritos
 
@@ -123,7 +123,7 @@ const renderFavourites = () => {
     }
 
     // Contador de personajes favoritos
-    favouritesCounter.innerHTML = `<i class="fa-solid fa-heart charactersFavourite__counterheart" style="color: red;"></i> Total de favoritos: ${favouritesCards.length}`;
+    favouritesCounter.innerHTML = `<i class="fa-solid fa-heart charactersFavouriteSection__counterheart" style="color: red;"></i> Total de favoritos: ${favouritesCards.length}`;
 
 };
 
