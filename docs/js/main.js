@@ -9,7 +9,7 @@ const d = document.querySelector(".js_characterUl"), L = document.querySelector(
         e.preventDefault(), n.style.display = "none", n.innerHTML = ""; const a = b.value.toLocaleLowerCase(); if (a === "") { fetch("https://api.disneyapi.dev/character?pageSize=50").then(t => t.json()).then(t => { s = t.data, l(), c() }); return } const o = `https://api.disneyapi.dev/character?pageSize=50&name=${encodeURIComponent(a)}`; fetch(o).then(t => t.json()).then(t => {
             if (t.info.count === 0) {
                 s = [], l(), c(), n.innerHTML = `<p>Lo sentimos, ese personaje no se encuentra en nuestra base de datos. Prueba con otro personaje.</p>
-                <img src="./../images/Alicia_llorando_character_not_found.gif" alt="Personaje no encontrado. 
+                <img src="../images/Alicia_llorando_character_not_found.gif" alt="Personaje no encontrado. 
                 Gif de Alicia en el país de las maravillas llorando">`, n.style.display = "block", n.classList.add("searchSection__characterNotFound"), d.classList.add("hidden"); return
             } d.classList.remove("hidden"), s = t.data, l(), c()
         }).catch(t => { console.error("Error", t), n.textContent = "Lo sentimos, hubo un problema con la búsqueda", n.style.display = "block", d.style.display = "none" })
