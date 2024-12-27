@@ -1,3 +1,9 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 .header {
     height: 50vh;
     background-image: url("../images/castillo-de-disney.jpeg");
@@ -84,7 +90,7 @@
     justify-content: center;
     align-items: center;
     margin-top: 25px;
-    margin-bottom: -15px;
+    margin-bottom: 15px;
 }
 
 .Allcharacters__title {
@@ -104,7 +110,6 @@
     gap: 0.5rem;
 
     max-width: 1100px;
-    margin-left: -50px;
 }
 
 .Allcharacters__card {
@@ -147,7 +152,6 @@
 
 .character__name {
     font-size: 1.25rem;
-    margin: 0;
     padding: 0.5rem;
     text-align: center;
 }
@@ -176,7 +180,7 @@
     border: 2px solid pink;
     border-radius: 10px;
 
-    padding: 0.5rem;
+    padding: 2.5rem;
     margin-inline: 50px;
 }
 
@@ -193,7 +197,6 @@
     justify-content: space-between;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    width: 90%;
 }
 
 .charactersFavourite__card:hover {
@@ -209,7 +212,9 @@
 
 .charactersFavourite__counter {
     text-align: center;
+    margin-top: 25px;
     margin-bottom: 50px;
+
 }
 
 .charactersFavourite__counterheart {
@@ -220,12 +225,13 @@
     margin: auto;
     width: 90%;
     text-align: center;
-    margin-bottom: 25px;
+    margin-block: 25px;
 }
 
 .charactersFavourite__delete-btn {
     background-color: #AA336A;
-    height: 2rem;
+    height: 2.5rem;
+    width: 17rem;
     color: white;
     font-size: 20px;
     border: 2px solid #AA336A;
@@ -234,6 +240,7 @@
     display: flex;
     justify-content: center;
     margin: auto;
+    margin-top: 50px;
 }
 
 .charactersFavourite__delete-btn:hover {
