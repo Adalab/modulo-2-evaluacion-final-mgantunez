@@ -223,7 +223,7 @@ const handleClickButton = (ev) => {
 
                 characterNotFound.innerHTML =
                     `<p>Lo sentimos, ese personaje no se encuentra en nuestra base de datos. Prueba con otro personaje.</p>
-                <img src="../images/Alicia llorando character not found.gif" alt="Personaje no encontrado. 
+                <img src="../images/Alicia_llorando_character_not_found.gif" alt="Personaje no encontrado. 
                 Gif de Alicia en el país de las maravillas llorando">`;
 
                 characterNotFound.style.display = 'block';
