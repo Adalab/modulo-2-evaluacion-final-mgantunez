@@ -1,0 +1,62 @@
+<main class="main">
+
+    <form class="search__form">
+
+      <input class="js_inputSearch search__input" type="text" name="submit-search" id="submit-search"
+        placeholder="Ejemplo: Mickey Mouse">
+      <input class="js_btnSearch search__btn" type="submit" value="Buscar">
+
+    </form>
+
+
+    <section class="bothcharacters__sections">
+
+      <div class="Allcharacters__section">
+
+        <div class="Allcharacters__header">
+
+          <h1 class="Allcharacters__title">
+            Listado de personajes de Disney
+          </h1>
+
+          <img class="Allcharacters__imageMickey" src="../images/mickey_mouse_section characters.png"
+            alt="Imagen de Mickey Mouse tumbado en sección de personajes de Disney">
+
+        </div>
+
+        <p class="js_characterNotFound"></p>
+
+        <ul class="js_characterUl Allcharacters__list">
+
+        </ul>
+
+
+      </div>
+
+      <div class="charactersFavourite__section">
+
+        <h2 class="charactersFavourite__title">
+          Tus personajes favoritos
+        </h2>
+
+        <p class="js_favouritesCounter charactersFavourite__counter" style="display: none"></p>
+
+        <ul class="js_favouriteCharacterUl charactersFavourite__list">
+
+        </ul>
+
+        <p class="js_descriptionTextFavourites charactersFavourite__text">Marca tus favoritos con el corazón
+          <i class="fa-solid fa-heart" style="color: red;"></i> y pasarán a formar parte de este listado
+        </p>
+
+        <img class="js_imageStitchFavourites charactersFavourite__image" src="../images/stitch section favourites.png"
+          alt="Stitch con corazones en sección de personajes favoritos">
+
+        <button class="js_deleteAllFavouritesBtn charactersFavourite__delete-btn" style="display: none">Borrar todos los
+          favoritos</button>
+
+      </div>
+
+    </section>
+
+  </main>
