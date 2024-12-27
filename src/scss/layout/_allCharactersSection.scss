@@ -1,5 +1,5 @@
 .allCharactersSection {
-    border: 2px solid #AA336A;
+    border: 2px solid $color_principal;
     border-radius: 10px;
     margin-left: 50px;
     padding-bottom: 50px;
@@ -63,8 +63,8 @@
 // Clase favourite para el <li>
 
 .favourite {
-    border: 2px solid #AA336A;
-    background-color: rgb(230, 138, 151);
+    border: 2px solid $color_principal;
+    background-color: $color_secondary;
 }
 
 

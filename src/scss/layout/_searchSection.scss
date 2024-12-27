@@ -26,18 +26,18 @@
     }
 
     &__btn {
-        background-color: #AA336A;
+        background-color: $color_principal;
         height: 2rem;
         color: white;
         font-size: 20px;
-        border: 2px solid #AA336A;
+        border: 2px solid $color_principal;
         border-radius: 8px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     &__btn:hover {
-        background-color: pink;
-        color: #AA336A;
+        background-color: $color_secondary;
+        color: $color_principal;
     }
 
     &__characterNotFound {
