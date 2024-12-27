@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Personajes de Disney</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  
+  <link rel="icon" href="./images/favicon-96x96.png" />
+
+  <link rel="stylesheet" href="./assets/index-1e9d7c97.css">
+</head>
+
+
+<body>
+
+  <header class="header">
+
+</header>
+  <main class="main">
+
+  <form class="searchSection">
+
+    <input class="js_inputSearch searchSection__input" type="text" name="submit-search" id="submit-search"
+      placeholder="Ejemplo: Mickey Mouse">
+    <input class="js_btnSearch searchSection__btn" type="submit" value="Buscar">
+
+  </form>
+
+
+  <section class="main__structure">
+
+    <article class="allCharactersSection">
+
+      <div class="allCharactersSection__header">
+
+        <h1 class="allCharactersSection__title">
+          Listado de personajes de Disney
+        </h1>
+
+        <img class="allCharactersSection__imageMickey" src="../images/mickey_mouse_section characters.png"
+          alt="Imagen de Mickey Mouse tumbado en sección de personajes de Disney">
+
+      </div>
+
+      <p class="js_characterNotFound"></p>
+
+      <ul class="js_characterUl allCharactersSection__list">
+
+      </ul>
+
+
+    </article>
+
+    <article class="charactersFavouriteSection">
+
+      <h2 class="charactersFavouriteSection__title">
+        Tus personajes favoritos
+      </h2>
+
+      <p class="js_favouritesCounter charactersFavourite__counter" style="display: none"></p>
+
+      <ul class="js_favouriteCharacterUl charactersFavouriteSection__list">
+
+      </ul>
+
+      <p class="js_descriptionTextFavourites charactersFavourite__text">Marca tus favoritos con el corazón
+        <i class="fa-solid fa-heart" style="color: red;"></i> y pasarán a formar parte de este listado
+      </p>
+
+      <img class="js_imageStitchFavourites charactersFavouriteSection__image"
+        src="../images/stitch section favourites.png" alt="Stitch con corazones en sección de personajes favoritos">
+
+      <button class="js_deleteAllFavouritesBtn charactersFavouriteSection__delete-btn" style="display: none">Borrar
+        todos los
+        favoritos</button>
+
+    </article>
+
+  </section>
+
+</main>
+  <footer class="footer">
+
+    <p>María García Antúnez © Adalab 2024</p>
+
+</footer>
+
+  <script src="./js/main.js"></script>
+  
+</body>
+
+</html>
