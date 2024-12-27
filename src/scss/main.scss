@@ -1,16 +1,7 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+@import 'core/reset';
+@import 'core/variables';
+@import 'layout/header';
 
-.header {
-    height: 50vh;
-    background-image: url("../images/castillo-de-disney.jpeg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
 
 .search__form {
     transform: translateY(-50%);
@@ -208,13 +199,13 @@
     font-size: 2rem;
     text-align: center;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+    margin-top: 25px;
 }
 
 .charactersFavourite__counter {
     text-align: center;
     margin-top: 25px;
     margin-bottom: 50px;
-
 }
 
 .charactersFavourite__counterheart {
