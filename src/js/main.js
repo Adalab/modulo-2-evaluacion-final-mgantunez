@@ -123,7 +123,7 @@ const renderFavourites = () => {
     }
 
     // Contador de personajes favoritos
-    favouritesCounter.innerHTML = `<i class="fa-solid fa-heart charactersFavourite_counterheart" style="color: red;"></i> Total de favoritos: ${favouritesCards.length}`;
+    favouritesCounter.innerHTML = `<i class="fa-solid fa-heart charactersFavourite__counterheart" style="color: red;"></i> Total de favoritos: ${favouritesCards.length}`;
 
 };
 
