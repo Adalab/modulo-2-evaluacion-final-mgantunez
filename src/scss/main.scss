@@ -1,70 +1,11 @@
 @import 'core/reset';
 @import 'core/variables';
 @import 'layout/header';
+@import 'layout/searchSection';
+@import 'layout/main';
 
 
-.search__form {
-    transform: translateY(-50%);
-    z-index: 2;
 
-    display: grid;
-    grid-template-columns: 4fr 1fr;
-
-    padding-inline: 25px;
-    gap: 15px;
-    width: 70%;
-
-
-    background-color: white;
-
-    margin: auto;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    height: 100px;
-
-    justify-content: center;
-    align-items: center;
-}
-
-.search__input {
-    height: 2rem;
-    font-size: 20px;
-}
-
-.search__btn {
-    background-color: #AA336A;
-    height: 2rem;
-    color: white;
-    font-size: 20px;
-    border: 2px solid #AA336A;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.search__btn:hover {
-    background-color: pink;
-    color: #AA336A;
-}
-
-.search__characterNotFound {
-    margin-top: 75px;
-    width: 90%;
-    font-size: 1.5rem;
-    display: flex;
-    text-align: center;
-}
-
-.main {
-    background: linear-gradient(to right, pink, white);
-    height: 100%;
-    width: 100%;
-    font-family: 'Roboto', sans-serif;
-}
-
-.bothcharacters__sections {
-    display: grid;
-    grid-template-columns: 70% 30%;
-    margin-bottom: 50px;
-}
 
 .Allcharacters__section {
     border: 2px solid #AA336A;

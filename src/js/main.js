@@ -227,7 +227,7 @@ const handleClickButton = (ev) => {
                 Gif de Alicia en el país de las maravillas llorando">`;
 
                 characterNotFound.style.display = 'block';
-                characterNotFound.classList.add('search__characterNotFound');
+                characterNotFound.classList.add('searchSection__characterNotFound');
                 characterUl.classList.add('hidden');
 
                 return;
